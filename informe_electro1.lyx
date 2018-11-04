@@ -1,0 +1,594 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part
+TRABAJO PRÁCTICO 2 - ELECTRÓNICA I
+\end_layout
+
+\begin_layout Section
+Amplificador Diferencial
+\end_layout
+
+\begin_layout Subsection
+Introducción
+\end_layout
+
+\begin_layout Standard
+En este artículo se procederá a desarrollar el proceso de diseño e implementació
+n de un amplificador con componentes (transistores y resistencias) discretos.
+ El proceso de diseño se debe realizar a partir de los componentes que se
+ adquieran dentro del marco de una simulación con recursos escasos, y en
+ cuanto a al implementación, se realizará un prototipo que se pondrá a prueba
+ mediante mediciones pertinentes para comprobar el funcionamiento del mismo.
+\end_layout
+
+\begin_layout Subsection
+Componentes Adquiridos
+\end_layout
+
+\begin_layout Standard
+Los componentes adquiridos mediante la simulación de subasta son los siguientes:
+\end_layout
+
+\begin_layout Standard
+Par diferencial (con transistores NPN, BC547)
+\end_layout
+
+\begin_layout Standard
+Transistor J-FET (de canal N, MPF102)
+\end_layout
+
+\begin_layout Standard
+Transistor bipolar (NPN, BC557)
+\end_layout
+
+\begin_layout Standard
+Fuente Espejo (con transistores PNP, BC547)
+\end_layout
+
+\begin_layout Standard
+Resistencia de 
+\begin_inset Formula $10K\Omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Resistencia de 
+\begin_inset Formula $6.8K\Omega$
+\end_inset
+
+ (dos unidades)
+\end_layout
+
+\begin_layout Standard
+Placa de 5cm X 10 cm.
+\end_layout
+
+\begin_layout Subsection
+Elección del Circuito
+\end_layout
+
+\begin_layout Subsubsection
+Primera Aproximación - Circuito con Par Diferencial
+\end_layout
+
+\begin_layout Standard
+Para la elección del circuito, se partirá de la siguiente configuración
+ con un par diferencial:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito con Par Diferencial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Al resolver la polarización de este circuito, se podría plantear lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Ic_{Q1}\thickapprox Ic_{Q2}\thickapprox\frac{V_{EE}-V_{BEon}}{\frac{Rs1}{HFE}+2.R_{EE}}=Ic_{Q}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $V_{CE}=V_{CC}+V_{EE}-2.Ic_{Q}.R_{EE}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Siendo 
+\begin_inset Formula $HFE$
+\end_inset
+
+ la ganancia de corriente (estática) de los transistores utilizados para
+ el par diferencial (considerada igual para cada transistor) y 
+\begin_inset Formula $V_{BEon}\thickapprox0.7V$
+\end_inset
+
+ (caida de tensión por la juntura base emisor).
+\end_layout
+
+\begin_layout Standard
+Luego, al plantear el circuito incremental se obtiene lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito Incremental con Par Diferencial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notesé que en la imagen de la derecha se representan las fuentes de señal
+ mediante su modo común 
+\begin_inset Formula $"Vic"$
+\end_inset
+
+ y su modo diferencial 
+\begin_inset Formula $"Vid"$
+\end_inset
+
+.
+ Esta forma de plantear la señal de entrada permite plantear el problema
+ utilizando el principio de superposición.
+ Por ende, para la resolución del circuito se procede a resolver el modo
+ común (pasivando el modo diferencial) y luego el modo diferencial (pasivando
+ las dos fuentes de modo común).
+ En este proceso, debido a la simetría del circuito, se puede aplicar el
+ teorema de bartlett para obtener los siguientes hemicircuitos, tanto para
+ el caso de modo común (imagen de la izquieda) como para el de modo diferencial
+ (imagen de la derecha):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hemicircuitos - Modo Común y Modo Diferencial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es importante aclarar que para poder plantear los hemicircuitos se debe
+ cumplir que la corriente del emisor en los dos transistores sean iguales.
+\end_layout
+
+\begin_layout Standard
+Dicho esto, al plantear la transferecia se obtiene lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\Delta v_{diferencial}\triangleq\frac{v_{od}}{v_{id}}\thickapprox\frac{gm.Rc}{2};\:gm=\frac{Ic_{Q}}{V_{T}};\:V_{T}\thickapprox26mV\\
+\Delta v_{común}\triangleq\frac{v_{oc}}{v_{ic}}\thickapprox-\frac{Rc}{2.R_{EE}}\\
+CMRR\Delta\triangleq\frac{\Delta v_{diferencial}}{\Delta v_{común}}\thickapprox-gm.R_{EE}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es deseable que el parámetro 
+\begin_inset Formula $CMRR$
+\end_inset
+
+ (proporción de rechazo del modo común) sea lo mayor posible para que el
+ circuito tome sentido en cuanto a su función de amplificador diferencial.
+ Por ejemplo, para la transimisión de una señal balanceda (para las cuales
+ el modo común es cero, al menos al inicio de su transimisión) no es deseable
+ amplificar el modo común ya que sería equivalente a amplificar el ruido
+ que se induce en la misma al ser transimitida, mientras que sí es deseable
+ amplificar el modo diferencial que corresponde con la señal en si misma.
+ Por ende, un 
+\begin_inset Formula $CMRR$
+\end_inset
+
+ mayor implica una mayor fidelidad de la señal resultante del amplificador,
+ con respecto a la señal de entrada.
+\end_layout
+
+\begin_layout Standard
+Dicho esto, en el circuito propuesto se podría pensar que el 
+\begin_inset Formula $CMRR$
+\end_inset
+
+ se vería incrementado al aumentar el valor de la resistencia 
+\begin_inset Formula $R_{EE}$
+\end_inset
+
+, sin embargo, esto a su vez produciría la disminución de 
+\begin_inset Formula $gm$
+\end_inset
+
+ ya que 
+\begin_inset Formula $Ic_{Q}$
+\end_inset
+
+es inversamente proporcional a 
+\begin_inset Formula $R_{EE}$
+\end_inset
+
+, por lo cual no se obtiene un aumento de 
+\begin_inset Formula $CMRR$
+\end_inset
+
+.
+ Para provocar el aumento de 
+\begin_inset Formula $CMRR$
+\end_inset
+
+ tendría que encontrarse la manera de lograr un valor de 
+\begin_inset Formula $R_{EE}$
+\end_inset
+
+ elevado sin que disminuya 
+\begin_inset Formula $Ic_{Q}$
+\end_inset
+
+.
+ En la siguiente sección se planteará una modificación al circuito mediante
+ un enfoque que permita solucionar este problema.
+\end_layout
+
+\begin_layout Subsubsection
+Segunda Aproximación - Polarización mediante Fuente de corriente
+\end_layout
+
+\begin_layout Standard
+Ante la limitación de 
+\begin_inset Formula $CMRR$
+\end_inset
+
+ que presenta el circuito presentado anteriormente, se procede a analizar
+ una posible mejora del mismo mediante la introducción de un transistor
+ J-FET de la siguiente manera:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito con J-FET
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dada la fórmula Schockley para la corriente de 
+\begin_inset Quotes eld
+\end_inset
+
+Drain
+\begin_inset Quotes erd
+\end_inset
+
+ del J-FET se puede notar que si el terminal de 
+\begin_inset Quotes eld
+\end_inset
+
+Gate
+\begin_inset Quotes erd
+\end_inset
+
+ y 
+\begin_inset Quotes eld
+\end_inset
+
+Source
+\begin_inset Quotes erd
+\end_inset
+
+ del transistor J-FET se encuentran al mismo potencial 
+\begin_inset Formula $(V_{GS}=0)$
+\end_inset
+
+, el transistor se convierte en una fuente de corriente ya que 
+\begin_inset Formula $I_{D}$
+\end_inset
+
+ toma el valor de 
+\begin_inset Formula $I_{DSS}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $I_{D}=I_{DSS}.(1-\frac{V_{GS}}{V_{P}})^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sin embargo, para controlar aún más la corriente de 
+\begin_inset Quotes eld
+\end_inset
+
+Drain
+\begin_inset Quotes erd
+\end_inset
+
+ del transistor se puede incorporar la resistencia 
+\begin_inset Formula $"Rj"$
+\end_inset
+
+ y obtener la siguiente expresión:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $V_{GS}=-I_{D}.Rj\Rightarrow I_{D}^{2}+I_{D}.(\frac{2.V_{P}}{Rj}-\frac{V_{p}^{2}}{Rj^{2}.I_{DSS}})+\frac{V_{P}^{2}}{Rj^{2}}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Según la hoja de datos del J-FET 
+\begin_inset Quotes eld
+\end_inset
+
+MPF 102
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Formula $I_{DSS}\thickapprox$
+\end_inset
+
+y 
+\begin_inset Formula $V_{P}\thickapprox$
+\end_inset
+
+, luego se obtienen los siguientes valores de 
+\begin_inset Formula $I_{D}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $I_{D}\thickapprox$
+\end_inset
+
+ ó 
+\begin_inset Formula $I_{D}\thickapprox$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De estos dos resultados, solo 
+\begin_inset Formula $I_{D}\thickapprox$
+\end_inset
+
+ tiene sentido ya que 
+\begin_inset Formula $I_{D}<I_{DSS}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces, cada transistor que conforma al par diferencial se proveerá de
+ una corriente 
+\begin_inset Formula $Ic_{Q}=\frac{I_{D}}{2}\thickapprox$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Para la elección del valor de la resistencia 
+\begin_inset Formula $"Rj"$
+\end_inset
+
+ debe tenerse en cuenta que la corriente 
+\begin_inset Formula $Ic_{Q}$
+\end_inset
+
+sea tal que el transistor opere en su zona segura de trabajo como amplificador
+ (
+\begin_inset Formula $"ZOA"$
+\end_inset
+
+, del inglés 
+\begin_inset Quotes eld
+\end_inset
+
+safety operation zone
+\begin_inset Quotes erd
+\end_inset
+
+).
+ JUSTIFICACION DEL VALOR DE RJJJJJJJJJJJJJJJJJJJJJJ
+\end_layout
+
+\begin_layout Subsection
+Simulación en LTspice
+\end_layout
+
+\begin_layout Subsection
+Materialización
+\end_layout
+
+\begin_layout Subsection
+Mediciones
+\end_layout
+
+\begin_layout Subsection
+Análisis de Resultados
+\end_layout
+
+\begin_layout Subsection
+Conclusión
+\end_layout
+
+\end_body
+\end_document
