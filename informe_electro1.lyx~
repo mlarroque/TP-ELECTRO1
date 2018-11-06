@@ -394,10 +394,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -489,6 +485,14 @@ Drain
 \end_layout
 
 \begin_layout Standard
+****************************************+
+\end_layout
+
+\begin_layout Standard
+ESTO HAY QUE REVISARLO, TALVEZ PONERLO EN OTRA SECCIÓN
+\end_layout
+
+\begin_layout Standard
 Según la hoja de datos del J-FET 
 \begin_inset Quotes eld
 \end_inset
@@ -567,7 +571,183 @@ safety operation zone
 \end_inset
 
 ).
- Los extremos de esta zona segura para 
+ JUSTIFICACION DEL VALOR DE RJJJJJJJJJJJJJJJJJJJJJJ
+\end_layout
+
+\begin_layout Standard
+************************************
+\end_layout
+
+\begin_layout Standard
+En cuanto al circuito incremental, se puede realizar el mismo análisis que
+ ya se visto en el circuito con la resistencia 
+\begin_inset Formula $R_{EE}$
+\end_inset
+
+, pero en lugar de esta resistencia habría que involucrar la resistencia
+ 
+\begin_inset Formula $R_{DS}$
+\end_inset
+
+ del transistor J-FET, por ende se obtiene lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\Delta v_{diferencial}\triangleq\frac{v_{od}}{v_{id}}\thickapprox\frac{gm.Rc}{2};\:gm=\frac{Ic_{Q}}{V_{T}};\:V_{T}\thickapprox26mV\\
+\Delta v_{común}\triangleq\frac{v_{oc}}{v_{ic}}\thickapprox-\frac{Rc}{2.R_{DS}}\\
+CMRR\Delta\triangleq\frac{\Delta v_{diferencial}}{\Delta v_{común}}\thickapprox-gm.R_{DS}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esto resulta en 
+\begin_inset Formula $CMRR$
+\end_inset
+
+ elevado debido al alto valor de 
+\begin_inset Formula $R_{DS}$
+\end_inset
+
+ (del orden de los ASDJKASÑDSA en el MPF 102) pero sin la necesidad de disminuir
+ 
+\begin_inset Formula $gm$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Con esta implementación se logra aumentar el 
+\begin_inset Formula $CMRR$
+\end_inset
+
+, sin embargo aún no se obtiene una amplificación elevada de la señal de
+ modo diferencial.
+ Esta se podría mejorar aumentamdo la resistencia 
+\begin_inset Formula $"Rc"$
+\end_inset
+
+, pero así también se aumentaría la potencia disipada del circuito.
+ A continuación se propondrá una nueva mejora al diseño que permite optimizar
+ aún más la amplificación del modo diferencial, evitando la limitación por
+ potencia.
+\end_layout
+
+\begin_layout Subsubsection
+Tercer Aproximación - Carga Activa
+\end_layout
+
+\begin_layout Standard
+Para poder aumentar la ganancia del modo diferencial se propone el siguiente
+ circuito:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito con Carga Activa - Fuente Espejo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede observar de la figura que se reemplazaron las resistencias 
+\begin_inset Formula $"Rc"$
+\end_inset
+
+ por una carga activa lograda mediante una fuente espejo con transistores
+ PNP.
+\end_layout
+
+\begin_layout Standard
+En cuanto a la polarización, esta no cambia con la incorporación de la fuente
+ espejo.
+ Solo se debe tener en cuenta que la fuente espejon sea capaz de copiar
+ a corriente de colector de los transistores NPN del par diferencial.
+\end_layout
+
+\begin_layout Standard
+Con respecto al circuito incremental, se pueden plantear nuevamente los
+ hemicircuitos de modo diferencial y de modo común, pero se debe reemplazar
+ la resistencia 
+\begin_inset Formula $"Rc"$
+\end_inset
+
+ por la resistencia de salida de la fuente 
+\begin_inset Formula $Rof\thickapprox r_{o3}$
+\end_inset
+
+.
+ Esta resistencia 
+\begin_inset Formula $r_{o3}$
+\end_inset
+
+ puede tomar un valor elevado pero no influye en la potencia disipada del
+ circuito, y por esto es que la incorporación de la fuente espejo como carga
+ activa mejora la características del circuito aumentando tanto la ganacia
+ de modo diferencial como la ganancia de modo común:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\Delta v_{diferencial}\triangleq\frac{v_{od}}{v_{id}}\thickapprox\frac{gm.r_{o3}}{2};\:gm=\frac{Ic_{Q}}{V_{T}};\:V_{T}\thickapprox26mV\\
+\Delta v_{común}\triangleq\frac{v_{oc}}{v_{ic}}\thickapprox-\frac{r_{o3}}{2.R_{DS}}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez obtenida la ganancia de tensión, es importante calcular la impedancia
+ de salida del circuito para analizar si el circuito es capaz de brindar
+ la mayor parte de la señal obtenida a la siguiente etapa que se conecte,
+ ya sea otro circuito de ganancia o un instrumento de medición.
+ Para el cálculo de la misma se debe partir del modelo incremental y se
+ obtiene la siguiente expresión:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{OUT}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Cuarta Aproximación - Colector Común como Adaptador de Impedancia
+\end_layout
+
+\begin_layout Standard
+Si se calcula la impedancia de salida del circuito planteado en la sección
+ anterior, se puede plantear lo siguiente:
 \end_layout
 
 \begin_layout Subsection
