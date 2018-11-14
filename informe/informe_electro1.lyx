@@ -636,8 +636,7 @@ Esto resulta en
 \begin_inset Formula $R_{DS}$
 \end_inset
 
- (del orden de los ASDJKASÑDSA en el MPF 102) pero sin la necesidad de disminuir
- 
+ pero sin la necesidad de disminuir 
 \begin_inset Formula $gm$
 \end_inset
 
@@ -980,15 +979,6 @@ Dicho esto, la expresión de la proporción de rechazo al modo común es la
 
 \end_layout
 
-\begin_layout Standard
-Por último, se procede a calcular las impedancias de entrada, de salida
- y la ganancia de corriente del circuito.
-\end_layout
-
-\begin_layout Standard
-CALCULAR LA GANANCIA DE CORRIENTE, IMPEDANCIAS DE SALIDA Y DE ENTRADA.
-\end_layout
-
 \begin_layout Subsubsection
 Cuarta Aproximación - Alternativa para Evitar Saturación
 \end_layout
@@ -1107,6 +1097,7 @@ Al verificar esta condición, se concluyó que los transistores se polarizan
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -1190,7 +1181,7 @@ hie
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $11K\Omega$
+\begin_inset Formula $9K\Omega$
 \end_inset
 
 
@@ -1225,6 +1216,9 @@ Ro
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $85K\Omega$
+\end_inset
+
 
 \end_layout
 
@@ -1234,6 +1228,9 @@ Ro
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $70K\Omega$
+\end_inset
+
 
 \end_layout
 
@@ -1292,6 +1289,15 @@ cuarta aproximación
 \end_inset
 
  según se lo requiera.
+ En cuanto a la cuarta aproximación, la 
+\begin_inset Formula $R_{L}$
+\end_inset
+
+ utilizada fue de 
+\begin_inset Formula $10K\Omega$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1335,16 +1341,6 @@ Imagen del Prototipo
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Ganancias e Impedancias - Análisis Teórico
-\end_layout
-
-\begin_layout Standard
-Dados los parámetros de los transistores utilizados se procede a calcular
- las ganancias de tensiones, las impedancias de entrada, de salida y las
- ganancias de corriente según 
 \end_layout
 
 \begin_layout Subsection
@@ -1483,9 +1479,21 @@ Por último, se realizó un análisis de montecarlo de la ganancia en modo
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/MonecarloDeCorrienteEnJFET.JPG
+	scale 30
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1647,7 +1655,7 @@ tierra
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
