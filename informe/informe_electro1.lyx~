@@ -70,10 +70,6 @@
 
 \begin_body
 
-\begin_layout Part
-TRABAJO PRÁCTICO 2 - ELECTRÓNICA I
-\end_layout
-
 \begin_layout Section
 Amplificador Diferencial
 \end_layout
@@ -1100,7 +1096,7 @@ Al verificar esta condición, se concluyó que los transistores se polarizan
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -1298,15 +1294,6 @@ cuarta aproximación
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Notese que con estas características, teóricamente se debería obtener una
- ganancia de tensión diferencial de ASDAKÑSDJ, para el circuito sin 
-\begin_inset Formula $R_{L}$
-\end_inset
-
- y de ASDASKDJÑ para el circuito con carga.
 \end_layout
 
 \begin_layout Standard

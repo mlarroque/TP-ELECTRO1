@@ -7,7 +7,7 @@
 \textclass article
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -27,6 +27,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -57,7 +58,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language french
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -69,10 +70,6 @@
 \end_header
 
 \begin_body
-
-\begin_layout Part
-TRABAJO PRÁCTICO 2 - ELECTRÓNICA I
-\end_layout
 
 \begin_layout Section
 Amplificador Diferencial
@@ -895,7 +892,7 @@ Esto tiene sentido ya que la fuente espejo de corriente copia la corriente
 \end_layout
 
 \begin_layout Standard
-En cuanto al ciruito de modo común, teóricamente la ganancia es igual cero
+En cuanto al circuito de modo común, teóricamente la ganancia es igual cero
  ya que en este caso la corriente de colector 
 \begin_inset Quotes eld
 \end_inset
@@ -931,9 +928,9 @@ En cuanto al ciruito de modo común, teóricamente la ganancia es igual cero
 \end_layout
 
 \begin_layout Standard
-Enrealidad, este análisis no tiene en cuenta que la corriente copiada por
+En realidad, este análisis no tiene en cuenta que la corriente copiada por
  la fuente espejo no es exactamente la corriente de referencia.
- Un aproximación más cerana a la realidad es plantear que la fuente copiada
+ Un aproximación más cercana a la realidad es plantear que la fuente copiada
  
 \begin_inset Formula $"I_{o}"$
 \end_inset
@@ -1050,7 +1047,7 @@ y poder lograr la corriente
 \begin_inset Formula $I_{DSS}$
 \end_inset
 
- (enrealidad otorga un rango entre 
+ (en realidad otorga un rango entre 
 \begin_inset Formula $2mA$
 \end_inset
 
@@ -1464,11 +1461,11 @@ De estas simulaciones se puede concluir que la ganancia en modo diferencial
 
 \begin_layout Standard
 Además, se simularon la impedancia de entrada, de salida y la ganancia de
- corriente, obteniendosé lo siguiente:
+ corriente, obteniéndose lo siguiente:
 \end_layout
 
 \begin_layout Standard
-Por último, se realizó un análisis de montecarlo de la ganancia en modo
+Por último, se realizó un análisis de Montecarlo de la ganancia en modo
  diferencial, al variar el valor de 
 \begin_inset Formula $I_{DSS}$
 \end_inset
@@ -1966,7 +1963,7 @@ Los resultados obtenidos a partir de las mediciones tomadas al excitar el
 \end_inset
 
  con respecto al circuito que sí posee la resistencia de carga.
- Sin embargo, para extraer conclsiones particularmente para la ganancia
+ Sin embargo, para extraer conclusiones particularmente para la ganancia
  en modo diferencial y en modo común y así poder obtener el CMRR de cada
  circuito se debe realizar un análisis más profundo que solo observar las
  amplitudes medidas por el osciloscopio.
@@ -1998,7 +1995,7 @@ mismatch
 \end_inset
 
  y eso provoca que se generen diferencias con los resultados de las mediciones
- experimentlas.
+ experimentales.
  Además, se debe prestar especial atención sobre los niveles de ruido que
  pueden afectar mediciones que pretendan poner en evidencia resultados del
  modelo de pequeña señal del transistor.
@@ -2026,7 +2023,7 @@ Dicho esto, la experiencia mostró que ambos circuitos realizados son competente
 
 \begin_layout Standard
 Finalemente, se han logrado medir impedancias de entrada y de salida medias
- que pueden ser facilmente llevadas a los extremos (por ejemplo, impedancia
+ que pueden ser fácilmente llevadas a los extremos (por ejemplo, impedancia
  de entrada superior e impedancia de salida inferior) mediante otras etapas
  de baja complejidad.
 \end_layout
