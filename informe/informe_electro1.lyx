@@ -30,7 +30,7 @@
 \spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -54,6 +54,13 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 2cm
+\footskip 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -809,6 +816,7 @@ Ante la limitación de
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -925,7 +933,7 @@ MPF 102
 \end_inset
 
  , 
-\begin_inset Formula $V_{P}\thickapprox$
+\begin_inset Formula $V_{P}\thickapprox98$
 \end_inset
 
  y además la corriente 
@@ -1044,6 +1052,24 @@ Con esta implementación se logra aumentar el
  A continuación se propondrá una nueva mejora al diseño que permite optimizar
  aún más la amplificación del modo diferencial, evitando la limitación por
  potencia.
+\end_layout
+
+\begin_layout Standard
+Antes de finalizar este análisis, vale aclarar que si se agrega una resistencia
+ 
+\begin_inset Formula $"R_{j}"$
+\end_inset
+
+ entre Gate y Source del J-Fet para regular la corriente de polarización
+ la resistencia 
+\begin_inset Formula $R_{DS}$
+\end_inset
+
+no representa a la intrínseca del transistor si no que 
+\begin_inset Formula $R_{DS}=R_{DSintrinseca}(1+gm.R_{j}$
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsubsection
@@ -1188,10 +1214,14 @@ Luego, para analizar la ganancia en modo diferencial se debe proceder a
 \end_inset
 
 Todas las corrientes de base se pueden considerar iguales
-\begin_inset Formula $\Rightarrow V*=0$
+\begin_inset Formula $\Rightarrow$
 \end_inset
 
+la tensión sobre la resistencia 
+\begin_inset Formula $R_{EE}$
+\end_inset
 
+ es cero.
 \end_layout
 
 \begin_layout Standard
@@ -1795,7 +1825,7 @@ Tensión de Salida - Modo Diferencial
 
 \end_inset
 
-
+<
 \end_layout
 
 \begin_layout Standard
@@ -1811,7 +1841,7 @@ Luego se ingresaron
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1828,7 +1858,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tensión de Salida - Modo Diferencial
+Tensión de Salida - Modo Común
 \end_layout
 
 \end_inset
@@ -1849,11 +1879,6 @@ De estas simulaciones se puede concluir que la ganancia en modo diferencial
 \end_layout
 
 \begin_layout Standard
-Además, se simularon la impedancia de entrada, de salida y la ganancia de
- corriente, obteniéndose lo siguiente:
-\end_layout
-
-\begin_layout Standard
 Por último, se realizó un análisis de Montecarlo de la ganancia en modo
  diferencial, al variar el valor de 
 \begin_inset Formula $I_{DSS}$
@@ -1868,7 +1893,7 @@ Por último, se realizó un análisis de Montecarlo de la ganancia en modo
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1895,10 +1920,6 @@ Análisis de Montecarlo - Ganancia en Modo Diferencial ante Variaciones de
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1941,12 +1962,13 @@ cuarta aproximación
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagenes/Tension_salida_modo_diferencial_carga_10k.JPG
-	scale 30
+	scale 40
 
 \end_inset
 
@@ -1956,7 +1978,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagenes/tensión_salida_modo_comun.JPG
-	scale 30
+	scale 40
 
 \end_inset
 
@@ -1980,10 +2002,6 @@ Cuarta Aproximación
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

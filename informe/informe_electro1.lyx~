@@ -30,7 +30,7 @@
 \spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -54,6 +54,13 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 2cm
+\footskip 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -70,6 +77,379 @@
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+
+\lang spanish-mexico
+\begin_inset Preview
+
+\begin_layout Standard
+
+\lang spanish-mexico
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+HRule}{
+\backslash
+rule{
+\backslash
+linewidth}{0.5mm}}       
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+center        
+\end_layout
+
+\begin_layout Plain Layout
+
+%-------------------------------------------------------------------------------
+--------- 
+\end_layout
+
+\begin_layout Plain Layout
+
+%	HEADING SECTIONS 
+\end_layout
+
+\begin_layout Plain Layout
+
+%-------------------------------------------------------------------------------
+---------      
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textsc{
+\backslash
+LARGE Instituto Tecnológico de Buenos Aires}
+\backslash
+
+\backslash
+[2cm]  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textsc{
+\backslash
+Large 22.59 Electronica 1}
+\backslash
+
+\backslash
+[1.5cm]  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textsc{
+\backslash
+large Trabajo Práctico de Laboratorio $N^o~2$ }
+\backslash
+
+\backslash
+[0.5cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+%-------------------------------------------------------------------------------
+--------- 
+\end_layout
+
+\begin_layout Plain Layout
+
+%	TITLE SECTION 
+\end_layout
+
+\begin_layout Plain Layout
+
+%-------------------------------------------------------------------------------
+---------      
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+HRule 
+\backslash
+
+\backslash
+[0.5cm] 
+\end_layout
+
+\begin_layout Plain Layout
+
+{ 
+\backslash
+huge Amplificador Diferencial}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[0.4cm]  
+\backslash
+HRule 
+\backslash
+
+\backslash
+[2cm]       
+\end_layout
+
+\begin_layout Plain Layout
+
+%-------------------------------------------------------------------------------
+--------- 
+\end_layout
+
+\begin_layout Plain Layout
+
+%	AUTHOR SECTION 
+\end_layout
+
+\begin_layout Plain Layout
+
+%-------------------------------------------------------------------------------
+---------      
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minipage}{0.4
+\backslash
+textwidth} 
+\backslash
+begin{flushleft} 
+\backslash
+large 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{Grupo 5:}
+\backslash
+
+\backslash
+		 [.3cm] 
+\end_layout
+
+\begin_layout Plain Layout
+
+Matías 
+\backslash
+textsc{Larroque}
+\backslash
+
+\backslash
+ Leg.
+ 56597
+\backslash
+
+\backslash
+  [.3cm] 
+\end_layout
+
+\begin_layout Plain Layout
+
+Ariel 
+\backslash
+textsc{Martorell}
+\backslash
+
+\backslash
+ Leg.
+ 56209
+\backslash
+
+\backslash
+  [.3cm] 
+\end_layout
+
+\begin_layout Plain Layout
+
+Manuel 
+\backslash
+textsc{Mollón}
+\backslash
+
+\backslash
+ Leg.
+ 58023 
+\backslash
+
+\backslash
+  [.3cm] 
+\end_layout
+
+\begin_layout Plain Layout
+
+Ezequiel 
+\backslash
+textsc{Vijande}
+\backslash
+
+\backslash
+ Leg.
+ 58057
+\backslash
+
+\backslash
+  [.3cm] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{flushleft} 
+\backslash
+end{minipage} ~ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minipage}{0.4
+\backslash
+textwidth} 
+\backslash
+begin{flushright} 
+\backslash
+large 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{Profesor:} 
+\backslash
+
+\backslash
+ [.3cm] 
+\end_layout
+
+\begin_layout Plain Layout
+
+Fernando  
+\backslash
+textsc{Alcocer}
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Pablo  
+\backslash
+textsc{Gardella} 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Eduardo  
+\backslash
+textsc{Oreglia} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{flushright} 
+\backslash
+end{minipage}
+\backslash
+
+\backslash
+[2cm]      
+\end_layout
+
+\begin_layout Plain Layout
+
+%-------------------------------------------------------------------------------
+--------- 
+\end_layout
+
+\begin_layout Plain Layout
+
+%	DATE SECTION 
+\end_layout
+
+\begin_layout Plain Layout
+
+%-------------------------------------------------------------------------------
+---------      
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vfill {
+\backslash
+large Entregado: 14 de Noviembre de 2018}
+\backslash
+
+\backslash
+[2cm]      
+\backslash
+vfill       
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset toc
@@ -673,6 +1053,24 @@ Con esta implementación se logra aumentar el
  potencia.
 \end_layout
 
+\begin_layout Standard
+Antes de finalizar este análisis, vale aclarar que si se agrega una resistencia
+ 
+\begin_inset Formula $"R_{j}"$
+\end_inset
+
+ entre Gate y Source del J-Fet para regular la corriente de polarización
+ la resistencia 
+\begin_inset Formula $R_{DS}$
+\end_inset
+
+no representa a la intrínseca del transistor si no que 
+\begin_inset Formula $R_{DS}=R_{DSintrinseca}(1+gm.R_{j}$
+\end_inset
+
+).
+\end_layout
+
 \begin_layout Subsubsection
 Tercera Aproximación - Carga Activa
 \end_layout
@@ -815,10 +1213,14 @@ Luego, para analizar la ganancia en modo diferencial se debe proceder a
 \end_inset
 
 Todas las corrientes de base se pueden considerar iguales
-\begin_inset Formula $\Rightarrow V*=0$
+\begin_inset Formula $\Rightarrow$
 \end_inset
 
+la tensión sobre la resistencia 
+\begin_inset Formula $R_{EE}$
+\end_inset
 
+ es cero.
 \end_layout
 
 \begin_layout Standard
@@ -1422,7 +1824,7 @@ Tensión de Salida - Modo Diferencial
 
 \end_inset
 
-
+<
 \end_layout
 
 \begin_layout Standard
@@ -1438,7 +1840,7 @@ Luego se ingresaron
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1455,7 +1857,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tensión de Salida - Modo Diferencial
+Tensión de Salida - Modo Común
 \end_layout
 
 \end_inset
@@ -1476,11 +1878,6 @@ De estas simulaciones se puede concluir que la ganancia en modo diferencial
 \end_layout
 
 \begin_layout Standard
-Además, se simularon la impedancia de entrada, de salida y la ganancia de
- corriente, obteniéndose lo siguiente:
-\end_layout
-
-\begin_layout Standard
 Por último, se realizó un análisis de Montecarlo de la ganancia en modo
  diferencial, al variar el valor de 
 \begin_inset Formula $I_{DSS}$
@@ -1495,7 +1892,7 @@ Por último, se realizó un análisis de Montecarlo de la ganancia en modo
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1522,10 +1919,6 @@ Análisis de Montecarlo - Ganancia en Modo Diferencial ante Variaciones de
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1568,12 +1961,13 @@ cuarta aproximación
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagenes/Tension_salida_modo_diferencial_carga_10k.JPG
-	scale 30
+	scale 40
 
 \end_inset
 
@@ -1583,7 +1977,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagenes/tensión_salida_modo_comun.JPG
-	scale 30
+	scale 40
 
 \end_inset
 
@@ -1607,10 +2001,6 @@ Cuarta Aproximación
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
