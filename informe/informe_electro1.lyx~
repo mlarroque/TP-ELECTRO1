@@ -150,9 +150,21 @@ Para la elección del circuito, se partirá de la siguiente configuración
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/diferencial.JPG
+	scale 50
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -212,9 +224,21 @@ Luego, al plantear el circuito incremental se obtiene lo siguiente:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/circuito_incremental_diferencial_solo.JPG
+	scale 50
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -261,9 +285,27 @@ Notesé que en la imagen de la derecha se representan las fuentes de señal
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/3_a.JPG
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/3_b.JPG
+	scale 40
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -383,7 +425,18 @@ Ante la limitación de
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/jfet.JPG
+	scale 50
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -619,11 +672,24 @@ Para poder aumentar la ganancia del modo diferencial se propone el siguiente
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/diferencial_entero.JPG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -632,10 +698,6 @@ Circuito con Carga Activa - Fuente Espejo
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -666,9 +728,21 @@ El modelo incremental de este nuevo circuito es el siguiente:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/circuito_completito.JPG
+	scale 40
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -750,9 +824,21 @@ Luego, el nodo del emisor del transistor
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/7.JPG
+	scale 50
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1179,8 +1265,9 @@ Características de los Transistores
 \end_layout
 
 \begin_layout Standard
-Finalmente, se realizó el prototipo del circuito y en la placa se utilizó
- un 
+Finalmente, se realizó el prototipo del circuito con los componentes obtenidos
+ en el sistema de subastas comentado al principio del artículo, pero además
+ se agregó un 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1213,11 +1300,19 @@ A continuación se muestra una imagen del prototipo del circuito:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/el_diego_foto_real.png
+	scale 30
+
+\end_inset
+
 
 \end_layout
 
@@ -1240,6 +1335,16 @@ Imagen del Prototipo
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Ganancias e Impedancias - Análisis Teórico
+\end_layout
+
+\begin_layout Standard
+Dados los parámetros de los transistores utilizados se procede a calcular
+ las ganancias de tensiones, las impedancias de entrada, de salida y las
+ ganancias de corriente según 
 \end_layout
 
 \begin_layout Subsection
@@ -1274,11 +1379,19 @@ pequeña señal
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/Tension_salida_modo_diferencial_sin_carga.JPG
+	scale 30
+
+\end_inset
+
 
 \end_layout
 
@@ -1313,9 +1426,21 @@ Luego se ingresaron
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/tensión_salida_modo_comun_sin_carga.JPG
+	scale 30
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1336,7 +1461,7 @@ Tensión de Salida - Modo Diferencial
 
 \begin_layout Standard
 De estas simulaciones se puede concluir que la ganancia en modo diferencial
- simulada es de ASDKAÑSJD, mientras que la de modo común es ASDASÑKDAS.
+ simulada es de aproximadamente 1200, mientras que la de modo común es 0.1.
 \end_layout
 
 \begin_layout Standard
@@ -1358,11 +1483,7 @@ Por último, se realizó un análisis de montecarlo de la ganancia en modo
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1412,19 +1533,39 @@ cuarta aproximación
 \begin_inset Formula $100mV$
 \end_inset
 
- de amplitud (imagen de la izquierda mostrada a continuación) y luego con
- 
+ de amplitud (imagen de superior mostrada a continuación) y luego con 
 \begin_inset Formula $100mV$
 \end_inset
 
- de modo común (imagen de la derecha):
+ de modo común (imagen inferior):
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/Tension_salida_modo_diferencial_carga_10k.JPG
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/tensión_salida_modo_comun.JPG
+	scale 30
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1493,9 +1634,27 @@ tierra
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/mediciones/normalMEAS_gainV.PNG
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/mediciones/HRES_gainV.PNG
+	scale 40
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1551,7 +1710,12 @@ HIGH RESOLUTION
 \end_layout
 
 \begin_layout Standard
-COMENTAR ALGO DE LA MEDICIÓN
+Luego, a partir de estas imagenes se procede a calcular la ganancia de tensión
+ como 
+\begin_inset Formula $\Delta v=\frac{15.7V.(1000)}{42.2V}\thickapprox372$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1565,11 +1729,25 @@ Por otro lado, se procedió a realizar la misma medición para el circuito
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/mediciones/normalMeas_deg_gainV.PNG
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/mediciones/HRES_deg_gainV.PNG
+	scale 40
+
+\end_inset
+
 
 \end_layout
 
@@ -1599,7 +1777,11 @@ Medición - Circuito con
 \end_layout
 
 \begin_layout Standard
-COMENTAR ALGO DE LA MEDICIÓN
+Luego, 
+\begin_inset Formula $\Delta v=\frac{8.13V.(1000)}{298V}\thickapprox27.3$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1626,11 +1808,19 @@ pura
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/mediciones/MDif_deg_gainV.PNG
+	scale 50
+
+\end_inset
+
 
 \end_layout
 
@@ -1656,12 +1846,24 @@ Medición - Excitación Diferencial
 \end_layout
 
 \begin_layout Standard
-COMENTAR ALGO DE LA MEDICIÓN
+Luego, 
+\begin_inset Formula $\Delta v_{diferencial}=\frac{8.11V.(1000)}{300V}\thickapprox27.03$
+\end_inset
+
+.
+ El motivo de esta medición es intentar mostrar que la ganancia en modo
+ diferencial es significativamente mayor a la ganancia del modo común del
+ circuito.
 \end_layout
 
 \begin_layout Standard
-Finalmente, se procedieron a medir las impedancias de entrada, de salida
- y la ganancia de corriente del circuito con 
+Vale aclarar que este último análisis es tan solo una aproximación a partir
+ de la medición tomada del osciloscopio.
+\end_layout
+
+\begin_layout Standard
+Finalmente, se procedieron a medir las impedancias de entrada y de salida
+ del circuito con 
 \begin_inset Formula $R_{L}$
 \end_inset
 
@@ -1707,15 +1909,100 @@ tierra
 \begin_inset Formula $7.5K\Omega$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Subsection
 Análisis de Resultados
 \end_layout
 
+\begin_layout Standard
+De las capturas de pantalla de osciloscopio mostradas en la sección anterior
+ se puede notar que las mediciones se ven ampliamente afectadas por señales
+ de ruido, ya que las señales que se ingresan al amplificador diferencial
+ son comparables a los niveles de ruido que prevalecen en el laboratorio
+ en el cual se tomaron dichas mediciones.
+ Para poder tomar mediciones que describan mejor la realidad, fue de gran
+ utilidad el modo de HIGH RESOLUTION del osciloscopio para promediar el
+ ruido que se ingresó a la señal, sin embargo, es importante observar la
+ realidad de lo que se mide mediante el modo NORMAL.
+\end_layout
+
+\begin_layout Standard
+Los resultados obtenidos a partir de las mediciones tomadas al excitar el
+ circuito solo mediante el borne de entrada
+\begin_inset Formula $Vs1$
+\end_inset
+
+ son solo de ganancia y como era de esperar, la ganancia es mayor para el
+ circuito sin 
+\begin_inset Formula $R_{L}$
+\end_inset
+
+ con respecto al circuito que sí posee la resistencia de carga.
+ Sin embargo, para extraer conclsiones particularmente para la ganancia
+ en modo diferencial y en modo común y así poder obtener el CMRR de cada
+ circuito se debe realizar un análisis más profundo que solo observar las
+ amplitudes medidas por el osciloscopio.
+\end_layout
+
+\begin_layout Standard
+Sin embargo, al observar la imagen en modo NORMAL del osciloscopio se puede
+ notar que ambos circuitos poseen CMRR apreciable ya que la señal de entrada
+ se visualiza con un ruido significativamente mayor a la señal de salida,
+ a pesar de que ambos puntos del circuito (tanto la entrada como la salida)
+ fueron expuestos a las mismas señales de ruido.
+\end_layout
+
 \begin_layout Subsection
 Conclusión
+\end_layout
+
+\begin_layout Standard
+Como conclusión del trabajo realizado, se puede afirmar que para diseñar
+ un circuitos con transistores discretos se debe tener en cuenta la compatibilid
+ad entre ellos, como por ejemplo sus puntos de polarización, hfe, hie y
+ Ro, ya que en el análisis teórico generalmente se suelen desestimar estos
+ posibles 
+\begin_inset Quotes eld
+\end_inset
+
+mismatch
+\begin_inset Quotes erd
+\end_inset
+
+ y eso provoca que se generen diferencias con los resultados de las mediciones
+ experimentlas.
+ Además, se debe prestar especial atención sobre los niveles de ruido que
+ pueden afectar mediciones que pretendan poner en evidencia resultados del
+ modelo de pequeña señal del transistor.
+\end_layout
+
+\begin_layout Standard
+Dicho esto, la experiencia mostró que ambos circuitos realizados son competentes
+ debido a su ganancia de tensión en modo diferencial y por su relativamente
+ alto rechazo al modo común, sobre todo el circuito sin 
+\begin_inset Formula $R_{L}$
+\end_inset
+
+.
+ En cuanto al circuito con 
+\begin_inset Formula $R_{L}$
+\end_inset
+
+, este además ofrece un rango lineal que acepta señales de hasta 
+\begin_inset Formula $150mV$
+\end_inset
+
+ de amplitud, lo cual es aceptable para circuitos que se resuelven mediante
+ el análisis de pequeña señal.
+\end_layout
+
+\begin_layout Standard
+Finalemente, se han logrado medir impedancias de entrada y de salida medias
+ que pueden ser facilmente llevadas a los extremos (por ejemplo, impedancia
+ de entrada superior e impedancia de salida inferior) mediante otras etapas
+ de baja complejidad.
 \end_layout
 
 \end_body
