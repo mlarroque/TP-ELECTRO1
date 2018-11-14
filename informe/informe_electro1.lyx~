@@ -152,7 +152,7 @@ Para la elección del circuito, se partirá de la siguiente configuración
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -214,7 +214,7 @@ Luego, al plantear el circuito incremental se obtiene lo siguiente:
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -263,11 +263,7 @@ Notesé que en la imagen de la derecha se representan las fuentes de señal
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -278,10 +274,6 @@ Hemicircuitos - Modo Común y Modo Diferencial
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -391,7 +383,7 @@ Ante la limitación de
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -485,14 +477,6 @@ Drain
 \end_layout
 
 \begin_layout Standard
-****************************************+
-\end_layout
-
-\begin_layout Standard
-ESTO HAY QUE REVISARLO, TALVEZ PONERLO EN OTRA SECCIÓN
-\end_layout
-
-\begin_layout Standard
 Según la hoja de datos del J-FET 
 \begin_inset Quotes eld
 \end_inset
@@ -501,55 +485,20 @@ MPF 102
 \begin_inset Quotes erd
 \end_inset
 
-, 
-\begin_inset Formula $I_{DSS}\thickapprox$
-\end_inset
-
-y 
+ , 
 \begin_inset Formula $V_{P}\thickapprox$
 \end_inset
 
-, luego se obtienen los siguientes valores de 
-\begin_inset Formula $I_{D}$
+ y además la corriente 
+\begin_inset Formula $I_{DSS}$
 \end_inset
 
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $I_{D}\thickapprox$
-\end_inset
-
- ó 
-\begin_inset Formula $I_{D}\thickapprox$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-De estos dos resultados, solo 
-\begin_inset Formula $I_{D}\thickapprox$
-\end_inset
-
- tiene sentido ya que 
-\begin_inset Formula $I_{D}<I_{DSS}$
+ del transistor utilizado es de 
+\begin_inset Formula $1mA$
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Entonces, cada transistor que conforma al par diferencial se proveerá de
- una corriente 
-\begin_inset Formula $Ic_{Q}=\frac{I_{D}}{2}\thickapprox$
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-Para la elección del valor de la resistencia 
+ En cuanto a la elección del valor de la resistencia 
 \begin_inset Formula $"Rj"$
 \end_inset
 
@@ -571,11 +520,33 @@ safety operation zone
 \end_inset
 
 ).
- JUSTIFICACION DEL VALOR DE RJJJJJJJJJJJJJJJJJJJJJJ
+ Con una resistencia 
+\begin_inset Formula $R_{j}$
+\end_inset
+
+ de 
+\begin_inset Formula $3.4K\Omega$
+\end_inset
+
+ se obtiene una 
+\begin_inset Formula $I_{D}$
+\end_inset
+
+ de 
+\begin_inset Formula $780uA$
+\end_inset
+
+, lo cual asegura el correcto funcionamiento de los transistores que componen
+ el circuito.
 \end_layout
 
 \begin_layout Standard
-************************************
+Entonces, cada transistor que conforma al par diferencial se proveerá de
+ una corriente 
+\begin_inset Formula $Ic_{Q}=\frac{I_{D}}{2}\thickapprox340uA$
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -638,7 +609,7 @@ Con esta implementación se logra aumentar el
 \end_layout
 
 \begin_layout Subsubsection
-Tercer Aproximación - Carga Activa
+Tercera Aproximación - Carga Activa
 \end_layout
 
 \begin_layout Standard
@@ -650,11 +621,7 @@ Para poder aumentar la ganancia del modo diferencial se propone el siguiente
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -689,77 +656,1058 @@ Se puede observar de la figura que se reemplazaron las resistencias
 \begin_layout Standard
 En cuanto a la polarización, esta no cambia con la incorporación de la fuente
  espejo.
- Solo se debe tener en cuenta que la fuente espejon sea capaz de copiar
- a corriente de colector de los transistores NPN del par diferencial.
+ Solo se debe tener en cuenta que la fuente espejo sea capaz de copiar la
+ corriente de colector de los transistores NPN del par diferencial.
 \end_layout
 
 \begin_layout Standard
-Con respecto al circuito incremental, se pueden plantear nuevamente los
- hemicircuitos de modo diferencial y de modo común, pero se debe reemplazar
- la resistencia 
-\begin_inset Formula $"Rc"$
+El modelo incremental de este nuevo circuito es el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito Incremental - Par Diferencial con Carga Activa
+\end_layout
+
 \end_inset
 
- por la resistencia de salida de la fuente 
-\begin_inset Formula $Rof\thickapprox r_{o3}$
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego, para analizar la ganancia en modo diferencial se debe proceder a
+ pasivar el modo diferencial.
+ De esta manera, al existir un incremento de modo diferencial en las tensiones
+ de entrada se producirá un cambio en las corrientes del circuito de la
+ siguiente manera:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $I_{B1}=I_{B2}$
+\end_inset
+
+ (por simetría del par diferencial)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $I_{B3}=I_{B4}$
+\end_inset
+
+ (coonsiderando 
+\begin_inset Formula $h_{ie3}=h_{ie4}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $I_{B3}.(2+hfe)\thickapprox I_{B1}hfe\Rightarrow I_{B3}\thickapprox I_{B1}.\frac{hfe}{2+hfe}\thickapprox I_{B1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+Todas las corrientes de base se pueden considerar iguales
+\begin_inset Formula $\Rightarrow V*=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego, el nodo del emisor del transistor 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ se puede considerar como tierra virtual y se puede plantear el siguiente
+ hemicircuito:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hemicircuito Diferencial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego, se llega a que 
+\begin_inset Formula $\Delta v_{diferencial}=\frac{1}{2}.\frac{2.R_{o4}.hfe}{h_{ie2}+R_{s}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esto tiene sentido ya que la fuente espejo de corriente copia la corriente
+ incremental del colector 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ y obliga a que esta corriente circule por la resistencia 
+\begin_inset Formula $R_{o4}$
+\end_inset
+
+ junto con la corriente del colector 
+\begin_inset Quotes eld
+\end_inset
+
+2
+\begin_inset Quotes erd
 \end_inset
 
 .
- Esta resistencia 
-\begin_inset Formula $r_{o3}$
-\end_inset
-
- puede tomar un valor elevado pero no influye en la potencia disipada del
- circuito, y por esto es que la incorporación de la fuente espejo como carga
- activa mejora la características del circuito aumentando tanto la ganacia
- de modo diferencial como la ganancia de modo común:
+ 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\begin{cases}
-\Delta v_{diferencial}\triangleq\frac{v_{od}}{v_{id}}\thickapprox\frac{gm.r_{o3}}{2};\:gm=\frac{Ic_{Q}}{V_{T}};\:V_{T}\thickapprox26mV\\
-\Delta v_{común}\triangleq\frac{v_{oc}}{v_{ic}}\thickapprox-\frac{r_{o3}}{2.R_{DS}}
-\end{cases}$
+En cuanto al ciruito de modo común, teóricamente la ganancia es igual cero
+ ya que en este caso la corriente de colector 
+\begin_inset Quotes eld
+\end_inset
+
+2
+\begin_inset Quotes erd
+\end_inset
+
+ tiene el mismo sentido que la corriente que copia la fuente espejo.
+ Además la corriente que copia la fuente es igual a la corriente del colector
+ 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+, es decir que también es igual a la del colector 
+\begin_inset Quotes eld
+\end_inset
+
+2
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Por ende, la corriente que circula por la resistencia 
+\begin_inset Formula $R_{o4}$
+\end_inset
+
+ es nula.
+\end_layout
+
+\begin_layout Standard
+Enrealidad, este análisis no tiene en cuenta que la corriente copiada por
+ la fuente espejo no es exactamente la corriente de referencia.
+ Un aproximación más cerana a la realidad es plantear que la fuente copiada
+ 
+\begin_inset Formula $"I_{o}"$
+\end_inset
+
+ es aquella obtenida mediante la expresión 
+\begin_inset Formula $I_{o}=\frac{I_{ref}}{1+\frac{2}{hfe}}$
+\end_inset
+
+.
+ De esta manera, la corriente 
+\begin_inset Formula $"I"$
+\end_inset
+
+ que circula por la resistencia 
+\begin_inset Formula $R_{o4}$
+\end_inset
+
+ en el análisis de modo común es 
+\begin_inset Formula $I=I_{ref}-\frac{I_{ref}}{1+\frac{2}{hfe}}=I_{ref}.(\frac{2}{2+hfe})$
+\end_inset
+
+.
+ Por lo tanto, 
+\begin_inset Formula $\Delta v_{común}\thickapprox(I_{ref}.(\frac{2}{2+hfe}).R_{o4}/I_{ref}.R_{DS})\thickapprox\frac{2R_{o4}}{(2+hfe_{PNP}).R_{DS}}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Una vez obtenida la ganancia de tensión, es importante calcular la impedancia
- de salida del circuito para analizar si el circuito es capaz de brindar
- la mayor parte de la señal obtenida a la siguiente etapa que se conecte,
- ya sea otro circuito de ganancia o un instrumento de medición.
- Para el cálculo de la misma se debe partir del modelo incremental y se
- obtiene la siguiente expresión:
+Dicho esto, la expresión de la proporción de rechazo al modo común es la
+ siguiente:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $R_{OUT}=$
+\begin_inset Formula $CMRR\thickapprox\frac{R_{o4}.hfe_{NPN}}{h_{ie2}+R_{s}}$
+\end_inset
+
+.
+\begin_inset Formula $\frac{(2+hfe_{PNP}).R_{DS}}{2R_{o4}}=\frac{2.hfe_{PNP}.R_{DS}+hfe_{NPN}.hfe_{PNP}.R_{DS}}{2.(h_{ie2}+R_{s})}$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Por último, se procede a calcular las impedancias de entrada, de salida
+ y la ganancia de corriente del circuito.
+\end_layout
+
+\begin_layout Standard
+CALCULAR LA GANANCIA DE CORRIENTE, IMPEDANCIAS DE SALIDA Y DE ENTRADA.
 \end_layout
 
 \begin_layout Subsubsection
-Cuarta Aproximación - Colector Común como Adaptador de Impedancia
+Cuarta Aproximación - Alternativa para Evitar Saturación
 \end_layout
 
 \begin_layout Standard
-Si se calcula la impedancia de salida del circuito planteado en la sección
- anterior, se puede plantear lo siguiente:
+El circuito anteriormente analizado se puede caracterizar por su ganancia
+ de tensión en modo diferencial elevada, sin embargo, esto tiene un límite
+ debido a las fuentes de alimentación que polarizan los transistores.
+ Más aún, al trabajar con tensiones de entrada elevadas, una ganancia como
+ la analizada en el amplificador diferencial en cuestión, es contraproducente
+ ya que provoca la saturación de la señal de salida y por ende se pierde
+ gran parte de la información de la misma.
 \end_layout
 
-\begin_layout Subsection
-Simulación en LTspice
+\begin_layout Standard
+Este problema se puede evitar al agregar una resistencia 
+\begin_inset Formula $"R_{L}"$
+\end_inset
+
+ como carga.
+ Esta carga provoca que disminuya la ganancia, y esto se puede ver sin modificar
+ el análisis ya realizado para el modelo incremental.
+ De hecho, en las expresiones de ganancia se debe reemplazar la resistencia
+ 
+\begin_inset Formula $R_{o4}$
+\end_inset
+
+ por el equivalente del paralelo entre 
+\begin_inset Formula $R_{o4}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{L}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
 Materialización
 \end_layout
 
+\begin_layout Standard
+A la hora de realizar el prototipo del circuito se utilizaron las dos resistenci
+as de 
+\begin_inset Formula $6.8K\Omega$
+\end_inset
+
+ asociadas en paralelo para formar la resistencia 
+\begin_inset Formula $R_{j}$
+\end_inset
+
+ de 
+\begin_inset Formula $3.4K\Omega$
+\end_inset
+
+y poder lograr la corriente 
+\begin_inset Formula $I_{D}$
+\end_inset
+
+ de 
+\begin_inset Formula $780uA$
+\end_inset
+
+.
+ Esta corriente fue comprobada experimentalmente en un prototipo aparte,
+ ya que la hoja de datos del J-Fet utilizado (MPF102) no otorga un valor
+ de 
+\begin_inset Formula $I_{DSS}$
+\end_inset
+
+ (enrealidad otorga un rango entre 
+\begin_inset Formula $2mA$
+\end_inset
+
+ y 
+\begin_inset Formula $20mA$
+\end_inset
+
+) y por ende no se podía asegurar el valor de 
+\begin_inset Formula $I_{D}$
+\end_inset
+
+ hasta medirlo en el laboratorio.
+\end_layout
+
+\begin_layout Standard
+Una vez asegurado el valor de la corriente 
+\begin_inset Formula $I_{D}$
+\end_inset
+
+, solo se debió corroborar con la hoja de datos que los transistores 
+\begin_inset Formula $BC557$
+\end_inset
+
+ y 
+\begin_inset Formula $BC547$
+\end_inset
+
+ logren polarizarse correctamente con una corriente de 
+\begin_inset Formula $I_{D}/2$
+\end_inset
+
+, es decir, 
+\begin_inset Formula $340uA$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Al verificar esta condición, se concluyó que los transistores se polarizan
+ correctamente y además presentan las siguientes características (teniendo
+ en cuenta la corriente de polarización):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BC547 (NPN)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BC557 (PNP)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hfe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+180
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+120
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hie
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $11K\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $7.35K\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Características de los Transistores
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, se realizó el prototipo del circuito y en la placa se utilizó
+ un 
+\begin_inset Quotes eld
+\end_inset
+
+jumper
+\begin_inset Quotes erd
+\end_inset
+
+ para poder medir el circuito propuesto en la 
+\begin_inset Quotes eld
+\end_inset
+
+tercera aproximación
+\begin_inset Quotes erd
+\end_inset
+
+ o el de la 
+\begin_inset Quotes eld
+\end_inset
+
+cuarta aproximación
+\begin_inset Quotes erd
+\end_inset
+
+ según se lo requiera.
+\end_layout
+
+\begin_layout Standard
+A continuación se muestra una imagen del prototipo del circuito:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Imagen del Prototipo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Simulación en LTspice
+\end_layout
+
+\begin_layout Standard
+Se utilizó la herramienta de LTspice para simular el circuito propuesto
+ anteriormente en la 
+\begin_inset Quotes eld
+\end_inset
+
+tercer aproximación
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Como primer paso se procedió excitar el circuito con una 
+\begin_inset Quotes eld
+\end_inset
+
+pequeña señal
+\begin_inset Quotes erd
+\end_inset
+
+ senoidal de 
+\begin_inset Formula $5mV$
+\end_inset
+
+ de amplitud en modo diferencial y se obtuvo la siguiente respuesta:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tensión de Salida - Modo Diferencial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego se ingresaron 
+\begin_inset Formula $100mV$
+\end_inset
+
+ en modo común y se obtuvo lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tensión de Salida - Modo Diferencial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De estas simulaciones se puede concluir que la ganancia en modo diferencial
+ simulada es de ASDKAÑSJD, mientras que la de modo común es ASDASÑKDAS.
+\end_layout
+
+\begin_layout Standard
+Además, se simularon la impedancia de entrada, de salida y la ganancia de
+ corriente, obteniendosé lo siguiente:
+\end_layout
+
+\begin_layout Standard
+Por último, se realizó un análisis de montecarlo de la ganancia en modo
+ diferencial, al variar el valor de 
+\begin_inset Formula $I_{DSS}$
+\end_inset
+
+ del transistor J-Fet utilizado para la polarización.
+ A continuación se muestra el resultado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Análisis de Montecarlo - Ganancia en Modo Diferencial ante Variaciones de
+ 
+\begin_inset Formula $I_{D}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De esta simulación se puede notar que la variación de la corriente de polarizaci
+ón produce variaciones significativas en la ganancia de tensión.
+ Más aún, se puede notar que puede llegar a saturar la tensión de salida.
+ En fin, los resultados de esta simulación reafirma la importancia del análisis
+ de la polarización.
+\end_layout
+
+\begin_layout Standard
+Para el circuito propuesto en la 
+\begin_inset Quotes eld
+\end_inset
+
+cuarta aproximación
+\begin_inset Quotes erd
+\end_inset
+
+, también se simuló la tensión de salida al excitar con una tensión en modo
+ diferencial de 
+\begin_inset Formula $100mV$
+\end_inset
+
+ de amplitud (imagen de la izquierda mostrada a continuación) y luego con
+ 
+\begin_inset Formula $100mV$
+\end_inset
+
+ de modo común (imagen de la derecha):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulaciones Modo Común y Diferencial - 
+\begin_inset Quotes eld
+\end_inset
+
+Cuarta Aproximación
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, la simulación indica una ganancia de modo común de ASDKJASÑLKD,
+ mientras que la de modo diferencial es ASDJAKÑSDLASD.
+\end_layout
+
 \begin_layout Subsection
 Mediciones
+\end_layout
+
+\begin_layout Standard
+Al momento de realizar de mediciones, primero se analizó el circuito propuesto
+ en la tercer aproximación.
+ Mediante el borne de entrada de 
+\begin_inset Formula $Vs1$
+\end_inset
+
+ se ingresó una excitación de senoidal 
+\begin_inset Formula $20mV$
+\end_inset
+
+de amplitud, mientras que el borne de entrada de 
+\begin_inset Formula $Vs2$
+\end_inset
+
+ se conecto a 
+\begin_inset Quotes eld
+\end_inset
+
+tierra
+\begin_inset Quotes erd
+\end_inset
+
+, y se midió la señal de salida con el osciloscopio.
+ A continuación se muestran las capturas de pantalla del mismo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Medición con Osciloscopio - Circuito sin 
+\begin_inset Formula $R_{L}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Debesé tener en cuenta que la imagen de la izquierda fue tomada con 
+\begin_inset Quotes eld
+\end_inset
+
+ACQUIRE
+\begin_inset Quotes erd
+\end_inset
+
+ del osciloscopio en 
+\begin_inset Quotes eld
+\end_inset
+
+NORMAL
+\begin_inset Quotes erd
+\end_inset
+
+ mientras que para la de la derecha se utilizó el modo 
+\begin_inset Quotes eld
+\end_inset
+
+HIGH RESOLUTION
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+COMENTAR ALGO DE LA MEDICIÓN
+\end_layout
+
+\begin_layout Standard
+Por otro lado, se procedió a realizar la misma medición para el circuito
+ con 
+\begin_inset Formula $R_{L}$
+\end_inset
+
+ y se obtuvo lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Medición - Circuito con 
+\begin_inset Formula $R_{L}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+COMENTAR ALGO DE LA MEDICIÓN
+\end_layout
+
+\begin_layout Standard
+Además, para el circuito con 
+\begin_inset Formula $R_{L}$
+\end_inset
+
+ se utilizó el borne de 
+\begin_inset Formula $Vs2$
+\end_inset
+
+ para ingresar al circuito con una señal lo más aproximado posible a una
+ diferencial 
+\begin_inset Quotes eld
+\end_inset
+
+pura
+\begin_inset Quotes erd
+\end_inset
+
+, es decir con modo comíun nulo.
+ A continuación se muestra el resultado obtenido:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Medición - Excitación Diferencial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+COMENTAR ALGO DE LA MEDICIÓN
+\end_layout
+
+\begin_layout Standard
+Finalmente, se procedieron a medir las impedancias de entrada, de salida
+ y la ganancia de corriente del circuito con 
+\begin_inset Formula $R_{L}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para la impedancia de entrada se procedió a excitar el circuito con una
+ señal de tensión, con una resistencia en serie al generador de dicha señal,
+ y luego se midió la tensión a la entrada del circuito y se calculó la impedanci
+a mediante la siguiente expresión:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{in}=\frac{|V_{in}|.R_{serie}}{|V_{in}-V_{generador}|}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con este razonamiento se obtuvo una impedancia de entrada de aproximadamente
+ 
+\begin_inset Formula $270K\Omega$
+\end_inset
+
+ de magnitud.
+\end_layout
+
+\begin_layout Standard
+Aplicando el mismo método, se procedió a medir la impedancia de salida pero
+ esta vez se ingresó la señal desde el borne de salida del circuito mientras
+ que el borne de entrada se conectaron a 
+\begin_inset Quotes eld
+\end_inset
+
+tierra
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Mediante este método se obtuvo una magnitud de 
+\begin_inset Formula $7.5K\Omega$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
