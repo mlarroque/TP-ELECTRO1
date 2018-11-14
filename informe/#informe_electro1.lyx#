@@ -1461,7 +1461,9 @@ Tensión de Salida - Modo Diferencial
 
 \begin_layout Standard
 De estas simulaciones se puede concluir que la ganancia en modo diferencial
- simulada es de ASDKAÑSJD, mientras que la de modo común es ASDASÑKDAS.
+ simulada es de aproximadamente 1200, mientras que la de modo común es de
+ 0.002.
+ Luego el CMRR es de 115.6dB
 \end_layout
 
 \begin_layout Standard
@@ -1533,21 +1535,37 @@ cuarta aproximación
 \begin_inset Formula $100mV$
 \end_inset
 
- de amplitud (imagen de la izquierda mostrada a continuación) y luego con
- 
+ de amplitud (imagen de superior mostrada a continuación) y luego con 
 \begin_inset Formula $100mV$
 \end_inset
 
- de modo común (imagen de la derecha):
+ de modo común (imagen inferior):
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/Tension_salida_modo_diferencial_carga_10k.JPG
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/tensión_salida_modo_comun.JPG
+	scale 30
+
+\end_inset
+
 
 \end_layout
 
@@ -1582,7 +1600,8 @@ Cuarta Aproximación
 
 \begin_layout Standard
 Finalmente, la simulación indica una ganancia de modo común de ASDKJASÑLKD,
- mientras que la de modo diferencial es ASDJAKÑSDLASD.
+ mientras que la de modo diferencial es 24, lo que significa un CMRR de
+ .
 \end_layout
 
 \begin_layout Subsection

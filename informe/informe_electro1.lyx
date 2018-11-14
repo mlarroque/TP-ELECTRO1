@@ -1462,7 +1462,8 @@ Tensión de Salida - Modo Diferencial
 \begin_layout Standard
 De estas simulaciones se puede concluir que la ganancia en modo diferencial
  simulada es de aproximadamente 1200, mientras que la de modo común es de
- 0.1.
+ 0.002.
+ Luego el CMRR es de 115.6dB
 \end_layout
 
 \begin_layout Standard
@@ -1484,7 +1485,7 @@ Por último, se realizó un análisis de montecarlo de la ganancia en modo
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1598,8 +1599,16 @@ Cuarta Aproximación
 \end_layout
 
 \begin_layout Standard
-Finalmente, la simulación indica una ganancia de modo común de ASDKJASÑLKD,
- mientras que la de modo diferencial es ASDJAKÑSDLASD.
+Finalmente, la simulación indica una ganancia de modo común de 0.03, mientras
+ que la de modo diferencial es 24, lo que significa un CMRR de 58.1.
+\end_layout
+
+\begin_layout Standard
+Vale aclarar que la frecuencia de trabajo para las simulaciones fue de 
+\begin_inset Formula $1KHz$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -1908,6 +1917,14 @@ tierra
 .
  Mediante este método se obtuvo una magnitud de 
 \begin_inset Formula $7.5K\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Vale aclarar que la frecuencia de trabajo para las mediciones fue de 
+\begin_inset Formula $1KHz$
 \end_inset
 
 .
