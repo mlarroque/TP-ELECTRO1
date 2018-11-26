@@ -816,6 +816,7 @@ Ante la limitación de
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -932,7 +933,7 @@ MPF 102
 \end_inset
 
  , 
-\begin_inset Formula $V_{P}\thickapprox$
+\begin_inset Formula $V_{P}\thickapprox98$
 \end_inset
 
  y además la corriente 
